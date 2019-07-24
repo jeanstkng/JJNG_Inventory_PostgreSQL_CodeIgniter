@@ -56,6 +56,16 @@
   <script src="<?php echo base_url();?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>assets/js/demo/chart-pie-demo.js"></script>
 
+  <!-- SCRIPTS Proyecto-->
+
+  <?php if($this->uri->segment(1)=='cingresos') {?> 
+        <script src="<?php echo base_url(); ?>js/producto.js"></script>
+  <?php }?>
+        
+  <?php if($this->uri->segment(1)=='cingresos') {?> 
+        <script src="<?php echo base_url(); ?>js/productoTabla.js"></script>
+  <?php }?>
+
 </body>
 
 </html>
