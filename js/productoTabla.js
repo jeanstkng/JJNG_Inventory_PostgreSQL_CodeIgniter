@@ -53,19 +53,19 @@ $('#btnGuardarProd').click(function(){
 	$('#tblProductos .filaProuctos').each(function(){
 		var id = $('.nombreprod:eq('+i+')').attr('id');
 		var nombreprod = $('.nombreprod:eq('+i+')').val();
-		var n1 = $('.categ:eq('+i+')').val();
-		var n2 = $('.cant:eq('+i+')').val();
-		var n3 = $('.precio:eq('+i+')').val();
-		var n4 = $('.prov:eq('+i+')').val();
+		var categ = $('.categ:eq('+i+')').val();
+		var cant = $('.cant:eq('+i+')').val();
+		var precio = $('.precio:eq('+i+')').val();
+		var prov = $('.prov:eq('+i+')').val();
 
 		$.post(baseurl+"cingresos/actualizarProducto", //se envian los datos al controlador
 			{
 				id: id,
 				nombreprod:nombreprod,
-				n1:n1,
-				n2:n2,
-				n3:n3,
-				n4:n4,
+				categ:categ,
+				cant:cant,
+				precio:precio,
+				prov:prov,
 			});
 		i++;
 

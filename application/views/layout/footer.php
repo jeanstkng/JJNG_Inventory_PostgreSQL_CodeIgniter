@@ -66,6 +66,9 @@
         <script src="<?php echo base_url(); ?>js/productoTabla.js"></script>
   <?php }?>
 
+  <?php if($this->uri->segment(1)=='cegresos') {?> 
+        <script src="<?php echo base_url(); ?>js/productoTablaEgresos.js"></script>
+  <?php }?>
 </body>
 
 </html>

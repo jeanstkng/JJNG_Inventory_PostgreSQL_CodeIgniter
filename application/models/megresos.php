@@ -1,6 +1,6 @@
 <?php
 
-class Mingresos extends CI_Model
+class Megresos extends CI_Model
 {
     function __construct()
     {
@@ -41,7 +41,6 @@ class Mingresos extends CI_Model
 		$this->db->join('proveedores prov','p.idproveedor = prov.id');
     $this->db->join('categorias c','p.idcategoria = c.id');
 
-             
 		$r = $this->db->get();
 		return $r->result();
       //metodo para obtener productos usando consulta con funciones del codeigniter para hacer las consultas
@@ -54,7 +53,14 @@ class Mingresos extends CI_Model
 			'cantidad' => $param['cant'],
 			'precio' => $param['precio'],
 			'idproveedor' => $param['prov'],
-			);
+      );
+    
+    $camposEgre = array(
+      'idproducto' => $param['id'],
+      'cantidadegresada' => $param['canteg']
+      );
+
+      $this->db->insert('productosegresados',$camposEgre);
 
       $this->db->set($campos, FALSE);
       $this->db->where('id', $param['id']);
