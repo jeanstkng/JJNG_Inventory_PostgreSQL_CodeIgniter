@@ -6,7 +6,7 @@ $.post(baseurl+"cingresos/getProductos", //se obtienen datos del controlador
 		$.each(obj, function(i, item){ //recorre los productos consultados y construye la tabla
 			$('#tblProductos tbody').append(
 				'<tr class="filaProuctos">'+
-					'<td><input type="text" id="'+item.id+'" value="'+item.nombreprod+'" style="'+estilo+'" class="nombreprod"></td>'+
+					'<td><input type="text" id="'+item.id+'" value="'+item.nombreprod+'" style="'+estilo+'" class="nombreprod"></div></td>'+
 					'<td>'+
 					'<select id="cboCategoriaM" name="txtCategoria" class="form-control categ">'+
 					'<option  value="'+item.idcat+'">'+item.nombrecat+' :Predet.'+'</option>'+                
@@ -19,7 +19,7 @@ $.post(baseurl+"cingresos/getProductos", //se obtienen datos del controlador
                     '<option  value="'+item.idprov+'">'+item.nombre+' :Predet.'+'</option>'+
 					'</select></td>'+
 					'<td>'+
-					'<input type="checkbox" class="elim'+item.id+'">'+
+					'<input type=radio class="elim'+item.id+'">'+
 					'</td>'+
 				'</tr>'
 				);
@@ -78,6 +78,15 @@ $('#btnGuardarProd').click(function(){
 	alert('Se guardo satisfactoriamente');
 	})//Funcion para guardar producto basado en lo que se modifico en la tabla
 
+	$('input[type=radio]').click(function(e){
+		if (e.ctrlKey) {
+			$(this).prop('checked', false);
+		}
+	});
+	$('input[type=radio]').dblclick(function(e){
+		alert('Use la tecla ctrl al hacer click para deseleccionar');
+	});
+	console.log(ids[1]);
 	$('#btnBorrarProd').click(function(){
 		var i = 0;
 		$('#tblProductos .filaProuctos').each(function(){

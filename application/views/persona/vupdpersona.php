@@ -11,7 +11,7 @@
 
                 <input type="text" name="txtNombre" placeholder="Nombre" class="form-control form-control-user">
                 <br>
-                <input type="text" name="txtApPaterno" placeholder="Apellido Paterno" class="form-control form-control-user">
+                <input type="text" name="txtApPaterno" placeholder="Apellido" class="form-control form-control-user">
                 <br>
                 <input type="text" name="txtEmail" placeholder="Email" class="form-control form-control-user">
                 <br>

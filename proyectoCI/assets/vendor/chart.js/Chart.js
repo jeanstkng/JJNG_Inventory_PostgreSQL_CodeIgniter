@@ -10897,10 +10897,11 @@ module.exports = {
 	acquireContext: function(item, config) {
 		if (typeof item === 'string') {
 			item = document.getElementById(item);
-		} else if (item.length) {
-			// Support for array based queries (such as jQuery)
-			item = item[0];
 		}
+		//  else if (item.length) {
+		// 	// Support for array based queries (such as jQuery)
+		// 	item = item[0];
+		// }
 
 		if (item && item.canvas) {
 			// Support for any object associated to a canvas (including a context2d)

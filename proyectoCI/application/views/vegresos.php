@@ -23,7 +23,7 @@
     </div>
 
     <div class="col-lg-2">
-        <button type="button" class="btn btn-block btn-success" id="btnGuardarProd">Guardar</button>
+        <button type="button" class="btn btn-block btn-primary" id="btnGuardarProd">Guardar</button>
     </div>
     
 </div>

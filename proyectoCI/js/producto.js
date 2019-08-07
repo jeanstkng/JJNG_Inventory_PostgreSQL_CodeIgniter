@@ -6,6 +6,19 @@ $.post("http://localhost/proyectoCI/cingresos/getProveedor",
   function (data) {
     var c = JSON.parse(data);
     $.each(c,function(i,item){
-      $('#cboProveedor').append('<option value="'+item.id+'">'+item.nombre+'</option>');
+      $('#cboProveedor').append('<option name="'+item.nombre+'" value="'+item.idprov+'">'+item.nombre+'</option>');
     }); 
   });
+  
+$.post("http://localhost/proyectoCI/cingresos/getCategoria",
+{
+  "sitregcat" : 1
+},
+function (data) {
+  var c = JSON.parse(data);
+  $.each(c,function(i,item){
+    $('#cboCategoria').append('<option name="'+item.nombrecat+'" value="'+item.idcat+'">'+item.nombrecat+'</option>');
+  });
+});
+
+  

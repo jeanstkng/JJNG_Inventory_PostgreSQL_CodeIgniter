@@ -1,11 +1,11 @@
 <?php
 
-class Cingresos extends CI_Controller
+class Cegresos extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('mingresos');
+        $this->load->model('megresos');
         if (!$this->session->userdata('s_idUsuario')) {
 			redirect('clogin');
 		}
@@ -16,7 +16,7 @@ class Cingresos extends CI_Controller
         
         $this->load->view('layout/header');
         $this->load->view('layout/menu');
-        $this->load->view('vingresos');
+        $this->load->view('vegresos');
         $this->load->view('layout/footer');    
                 
     }
@@ -25,7 +25,7 @@ class Cingresos extends CI_Controller
 	public function getProveedor(){
             
 		$s = 1;
-		$resultado = $this->mingresos->getProveedor($s);
+		$resultado = $this->megresos->getProveedor($s);
 
 		echo json_encode($resultado);
                 
@@ -42,16 +42,14 @@ class Cingresos extends CI_Controller
         $param['idproveedor'] = $this->input->post('txtProveedor');
         $param['idcategoria'] = $this->input->post('txtCategoria');
         
-        $this->mingresos->guardarProd($param);
-
-        redirect('cingresos/index');
+        $this->megresos->guardarProd($param);
 
     }
     
     public function getCategoria(){
             
 		$s = 1;
-		$resultado = $this->mingresos->getCategoria($s);
+		$resultado = $this->megresos->getCategoria($s);
 
 		echo json_encode($resultado);
                 
@@ -59,7 +57,7 @@ class Cingresos extends CI_Controller
 
         
     public function getProductos(){
-		echo json_encode($this->mingresos->getProductos());
+		echo json_encode($this->megresos->getProductos());
     }
     
     
@@ -68,18 +66,12 @@ class Cingresos extends CI_Controller
         $param['id'] = $this->input->post('id');
 		$param['nombreprod'] = $this->input->post('nombreprod');
 		$param['categ'] = $this->input->post('categ');
-		$param['cant'] = $this->input->post('cant');
+        $param['cant'] = $this->input->post('cant');
+        $param['canteg'] = $this->input->post('canteg');
 		$param['precio'] = $this->input->post('precio');
 		$param['prov'] = $this->input->post('prov');
 
-		$this->mingresos->actualizarProducto($param);
-    }
-
-    public function borrarProducto(){
-
-        $param['id'] = $this->input->post('id');
-
-        $this->mingresos->borrarProducto($param);
+		$this->megresos->actualizarProducto($param);
     }
 }
 

@@ -25,15 +25,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">¿Ya te vas?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Pulse "Logout" si deseas cerrar tu sesión.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="<?php echo base_url();?>clogin/logout">Cerrar sesión</a>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
   <script src="<?php echo base_url();?>assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.js"></script>
 
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url();?>assets/js/demo/chart-area-demo.js"></script>
@@ -69,6 +69,12 @@
   <?php if($this->uri->segment(1)=='cegresos') {?> 
         <script src="<?php echo base_url(); ?>js/productoTablaEgresos.js"></script>
   <?php }?>
+
+  <!-- Colocar javascript -->
+  <?php if($this->uri->segment(1)=='cproveedores') {?> 
+        <script src="<?php echo base_url(); ?>js/proveedores.js"></script>
+  <?php }?>
+
 </body>
 
 </html>

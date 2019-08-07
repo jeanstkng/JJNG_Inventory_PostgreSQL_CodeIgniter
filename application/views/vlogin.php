@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tutorial CI</title>
+  <title>JJNG</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,12 +46,6 @@
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="txtClave" id="exampleInputPassword" placeholder="Ingrese su contraseña">
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Recordarme</label>
-                      </div>
-                    </div>
                     <input type="submit" value="Ingresar"class="btn btn-primary btn-user btn-block">
                     <br>  
                     <?php echo $mensaje; ?>
@@ -59,9 +53,6 @@
                   </form>
                   <hr> 
                   <br>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Olvidó su contraseña?</a>
-                  </div>
                   <div class="text-center">
                     <a class="small" href="">Registrarse</a>
                   </div>

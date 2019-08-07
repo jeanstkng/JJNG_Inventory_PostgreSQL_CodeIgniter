@@ -50,7 +50,7 @@
   <script src="<?php echo base_url();?>assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.js"></script>
 
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url();?>assets/js/demo/chart-area-demo.js"></script>
@@ -61,7 +61,14 @@
   <?php if($this->uri->segment(1)=='cingresos') {?> 
         <script src="<?php echo base_url(); ?>js/producto.js"></script>
   <?php }?>
+        
+  <?php if($this->uri->segment(1)=='cingresos') {?> 
+        <script src="<?php echo base_url(); ?>js/productoTabla.js"></script>
+  <?php }?>
 
+  <?php if($this->uri->segment(1)=='cegresos') {?> 
+        <script src="<?php echo base_url(); ?>js/productoTablaEgresos.js"></script>
+  <?php }?>
 </body>
 
 </html>

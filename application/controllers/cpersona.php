@@ -47,7 +47,6 @@ class Cpersona extends CI_Controller
 
         $this->mpersona->actualizarDatos($param);
 
-        redirect('cpersona/index');
     }
 
     public function eliminarPersona()

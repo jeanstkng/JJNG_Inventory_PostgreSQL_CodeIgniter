@@ -1,6 +1,6 @@
 <?php
 
-class Mingresos extends CI_Model
+class Megresos extends CI_Model
 {
     function __construct()
     {
@@ -36,13 +36,11 @@ class Mingresos extends CI_Model
     
     public function getProductos(){
 
-    $this->db->select("p.id, p.nombreprod, c.nombrecat, p.cantidad, p.precio, prov.nombre, 
-                       p.idcategoria as idcat, p.idproveedor as idprov", false);
+		$this->db->select("p.id, p.nombreprod, c.nombrecat, p.cantidad, p.precio, prov.nombre, p.idcategoria as idcat, p.idproveedor as idprov", false);
 		$this->db->from('productos p');
 		$this->db->join('proveedores prov','p.idproveedor = prov.id');
     $this->db->join('categorias c','p.idcategoria = c.id');
 
-             
 		$r = $this->db->get();
 		return $r->result();
       //metodo para obtener productos usando consulta con funciones del codeigniter para hacer las consultas
@@ -55,7 +53,14 @@ class Mingresos extends CI_Model
 			'cantidad' => $param['cant'],
 			'precio' => $param['precio'],
 			'idproveedor' => $param['prov'],
-			);
+      );
+    
+    $camposEgre = array(
+      'idproducto' => $param['id'],
+      'cantidadegresada' => $param['canteg']
+      );
+
+      $this->db->insert('productosegresados',$camposEgre);
 
       $this->db->set($campos, FALSE);
       $this->db->where('id', $param['id']);
@@ -63,12 +68,5 @@ class Mingresos extends CI_Model
         
     }//metodo para actualizar producto en base de datos con los datos extraidos en  el controlador
      //y usando funciones del codeigniter para especificar condicion
-
-    public function borrarProducto($param){
-      $this->db->where('idproducto', $param['id']);
-      $this->db->delete('productosegresados');
-      $this->db->where('id', $param['id']);
-      $this->db->delete('productos');
-    }
 
 }
