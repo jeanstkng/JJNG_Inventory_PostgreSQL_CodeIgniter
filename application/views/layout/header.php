@@ -73,6 +73,12 @@
                 <span>Proveedores</span></a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url();?>creportes">
+                <i class="fas fa-fw fa-square"></i>
+                <span>Reportes</span></a>
+            </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
